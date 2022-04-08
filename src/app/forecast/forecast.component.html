@@ -1,0 +1,25 @@
+<div class="container mt-3">
+   
+    <h3 style="font-size:20px;"> {{Getapi_data?.city?.name}}&nbsp;({{this.zip_value}}) </h3>
+    <div class="col-12 weather-border">
+        <div class="row" *ngFor="let data of final_array">
+
+            <div class="col-8 box">
+                {{getDay_val(data)}}: {{data?.weather[0]?.main}} - High:
+                {{data?.main?.temp_max}} - Low:{{data?.main?.temp_min}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i *ngIf="data?.weather[0]?.main == 'Clouds'"><img src="../../assets/clouds.png" alt=""></i>
+                <a *ngIf="data?.weather[0]?.main == 'Clear'"><img src="../../assets/sun.png" alt=""></a>
+                <a *ngIf="data?.weather[0]?.main == 'Rain'"><img src="../../assets/rain.png" alt=""></a>
+                <a *ngIf="data?.weather[0]?.main == 'Snow'"><img src="../../assets/snow.png" alt=""></a>
+            </div><br>
+            <div class="col-4">
+
+            </div>
+        </div>
+
+    </div>
+	<br>
+	 <div class="text-right mb-3"><button style="background-color:#8bc34a" (click)="clickBack()">
+            < Back to main Page</button>
+    </div>
+	</div>

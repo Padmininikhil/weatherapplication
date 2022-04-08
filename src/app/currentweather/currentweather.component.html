@@ -1,0 +1,30 @@
+<div class="landing-box">
+
+<div class="well">
+    <h4>Enter a zipcode:</h4>
+    <input class="form-control" placeholder="Zipcode" type="text" [formControl]="currentlocation_Id" id="addLocation">
+    &nbsp; &nbsp;
+    <button class="btn btn-primary mt-3" id="addLocationBtn" (click)="saveLocation_details()">
+        Add location
+    </button>
+</div>
+</div>
+
+<div  class="landing-box" *ngFor="let Obj of currentlocation_array">
+  <h5>{{Obj?.Getapi_datas?.name}} ({{Obj?.ZipCode}})</h5> <button class="x-btn" (click)="setselected_data(Obj)">X</button>
+    <div class="row">
+        <div class="col-sm-6 mt-5">Current Condition:{{Obj?.Getapi_datas?.weather[0]?.main}}<br>
+          <div class="mt-3">Temperature: {{Obj?.Getapi_datas?.main?.temp}}</div>
+          <div class="mt-3"> Max Today: {{Obj?.Getapi_datas?.main?.temp_max}} -
+            Min Today: {{Obj?.Getapi_datas?.main?.temp_min}}</div>
+            <a href="javascript:void(0)" (click)="showForecast_Details(Obj)">Show 5-day forecast for {{Obj?.Getapi_datas?.name}} </a>
+        </div>
+        <div class="col-sm-6">
+            <i *ngIf="Obj?.Getapi_datas?.weather[0]?.main == 'Clouds'"><img src="../../assets/clouds.png" alt=""></i>
+            <a *ngIf="Obj?.Getapi_datas?.weather[0]?.main == 'Clear'"><img src="../../assets/sun.png" alt=""></a>
+            <a *ngIf="Obj?.Getapi_datas?.weather[0]?.main == 'Rain'"><img src="../../assets/rain.png" alt=""></a>
+            <a *ngIf="Obj?.Getapi_datas?.weather[0]?.main == 'Snow'"><img src="../../assets/snow.png" alt=""></a>
+        </div>
+    </div>
+</div>
+ <br><br><br>
