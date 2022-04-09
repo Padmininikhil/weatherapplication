@@ -49,7 +49,7 @@ export class CurrentweatherComponent implements OnInit {
 
 
   /*Function used to set the selected Data*/
-  setselected_data(obj: any) {
+  setSelected_Data(obj: any) {
     this.findLocation_array = localStorage.getItem("Added_locations")
     this.currentlocation_array = JSON.parse(this.findLocation_array)
     let findObj = this.currentlocation_array.findIndex((b: any) => b.ZipCode == obj.ZipCode)
@@ -58,10 +58,10 @@ export class CurrentweatherComponent implements OnInit {
   }
 
   /*Function used to get the Images*/
-  getImage_Val(val: any) {
+/*   getImage_Val(val: any) {
     console.log(val + '.png');
     return val + '.png'
-  }
+  } */
 
   /*Function Used to show the Forecast Details*/
   showForecast_Details(obj: any) {

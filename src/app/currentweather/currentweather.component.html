@@ -11,7 +11,7 @@
 </div>
 
 <div  class="landing-box" *ngFor="let Obj of currentlocation_array">
-  <h5>{{Obj?.Getapi_datas?.name}} ({{Obj?.ZipCode}})</h5> <button class="x-btn" (click)="setselected_data(Obj)">X</button>
+  <h5>{{Obj?.Getapi_datas?.name}} ({{Obj?.ZipCode}})</h5> <button class="x-btn" (click)="setSelected_Data(Obj)">X</button>
     <div class="row">
         <div class="col-sm-6 mt-5">Current Condition:{{Obj?.Getapi_datas?.weather[0]?.main}}<br>
           <div class="mt-3">Temperature: {{Obj?.Getapi_datas?.main?.temp}}</div>
